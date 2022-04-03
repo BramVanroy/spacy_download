@@ -2,6 +2,10 @@
 
 A tiny drop-in replacement for `spacy.load()` that automatically downloads a model when it is not currently installed.
 
+```shell
+pip install spacy_download
+```
+
 Usage is identical to [`spacy.load()`](https://spacy.io/api/top-level/#spacy.load), meaning that you can also exclude
 or disable pipeline components. Example:
 
