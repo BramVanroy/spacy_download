@@ -12,7 +12,8 @@ or disable pipeline components. Example:
 ```python
 from spacy_download import load_spacy
 
-nlp = load_spacy("en_core_web_sm", exclude=["parser", "tagger"])  # Will download the model if it isn't installed yet
+# Will download the model if it isn't installed yet
+nlp = load_spacy("en_core_web_sm", exclude=["parser", "tagger"])  
 ```
 
 Under the hood, the package makes use of spaCy's capability to import models as modules, rather than using spaCy's
