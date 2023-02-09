@@ -21,9 +21,6 @@ def non_existing_model() -> str:
 
 @pytest.fixture(autouse=True)
 def uninstall_package(existing_model, existing_trf_model):
-    # TODO: (maybe) more thorough uninstall, e.g., by collecting pip freeze before every test
-    # and after every test, then writing the diff of these to a dummy requirements.txt file
-    # and then pip uninstall -r requirements.txt
     cmd = [sys.executable, "-m", "pip", "uninstall"] + [existing_model, existing_trf_model] + ["-y", "-qqq"]
     run_command(cmd)  # uninstall models before
     yield

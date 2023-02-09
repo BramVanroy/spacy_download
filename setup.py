@@ -1,17 +1,16 @@
 from pathlib import Path
 from setuptools import find_packages, setup
 
-from spacy_download import __version__
-
 
 setup(
     name="spacy_download",
-    version=__version__,
+    version="1.1.0",
     description="Download and load spaCy models on-the-fly.",
     long_description=Path("README.md").read_text(encoding="utf-8"),
     long_description_content_type="text/markdown",
     keywords="nlp spacy spacy-extension",
-    packages=find_packages(include=["spacy_download", "spacy_download.*"]),
+    package_dir={"": "src"},
+    packages=find_packages("src"),
     url="https://github.com/BramVanroy/spacy_download",
     author="Bram Vanroy",
     author_email="bramvanroy@hotmail.com",
@@ -25,6 +24,8 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Operating System :: OS Independent"
     ],
     project_urls={
@@ -32,6 +33,6 @@ setup(
         "Source": "https://github.com/BramVanroy/spacy_download",
     },
     python_requires=">=3.6",
-    install_requires=["spacy<4"],
-    extras_require={"dev": ["pytest", "flake8", "isort", "black", "pygments"]},
+    install_requires=["spacy<4.0.0,>=3.0.0"],
+    extras_require={"dev": ["pytest", "flake8", "isort", "black", "pygments", "spacy-transformers"]},
 )
